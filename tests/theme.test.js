@@ -18,6 +18,18 @@ describe("theme palette", () => {
   });
 });
 
+describe("theme shape and shadows", () => {
+  it("defines a pill radius next to the default radius", () => {
+    expect(theme.shape.borderRadius).toBe(8);
+    expect(theme.shape.borderPill).toBe("999px");
+  });
+
+  it("keeps the 25 MUI shadow levels, with no shadow at level 0", () => {
+    expect(theme.shadows).toHaveLength(25);
+    expect(theme.shadows[0]).toBe("none");
+  });
+});
+
 describe("theme typography", () => {
   it("keeps button labels in their original case", () => {
     expect(theme.typography.button.textTransform).toBe("none");
