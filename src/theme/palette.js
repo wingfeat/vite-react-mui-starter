@@ -6,6 +6,18 @@ export const BRAND_COLORS = {
   neutral: "#475569",
 };
 
+// Every color usable with the `color` prop (Button, Chip, Alert...).
+// Add a new custom color here so the soft variant and the showcase follow.
+export const THEME_COLORS = [
+  "primary",
+  "secondary",
+  "neutral",
+  "error",
+  "warning",
+  "info",
+  "success",
+];
+
 const palette = {
   primary: { main: BRAND_COLORS.primary },
   secondary: { main: BRAND_COLORS.secondary },

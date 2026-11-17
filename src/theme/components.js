@@ -1,15 +1,5 @@
 import { alpha } from "@mui/material/styles";
-
-// Colors that support the custom "soft" Button variant.
-const SOFT_COLORS = [
-  "primary",
-  "secondary",
-  "neutral",
-  "error",
-  "warning",
-  "info",
-  "success",
-];
+import { THEME_COLORS } from "./palette.js";
 
 const components = {
   // Global styles, added by <CssBaseline />.
@@ -41,7 +31,7 @@ const components = {
         },
         // Custom variant: <Button variant="soft" color="...">
         // A light tinted background with dark text, one rule per color.
-        variants: SOFT_COLORS.map((color) => ({
+        variants: THEME_COLORS.map((color) => ({
           props: { variant: "soft", color },
           style: {
             color: theme.palette[color].dark,

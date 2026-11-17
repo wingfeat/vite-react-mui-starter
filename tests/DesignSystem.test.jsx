@@ -12,12 +12,16 @@ describe("DesignSystem page", () => {
       </ThemeProvider>,
     );
 
-    ["Colors", "Typography", "Shape and elevation", "Components"].forEach(
-      (title) => {
-        expect(
-          screen.getByRole("heading", { level: 2, name: title }),
-        ).toBeInTheDocument();
-      },
-    );
+    [
+      "Colors",
+      "Typography",
+      "Buttons",
+      "Shape and elevation",
+      "Components",
+    ].forEach((title) => {
+      expect(
+        screen.getByRole("heading", { level: 2, name: title }),
+      ).toBeInTheDocument();
+    });
   });
 });

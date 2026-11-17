@@ -1,16 +1,7 @@
 import { Box, Grid, Paper, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import { THEME_COLORS } from "../../theme/palette.js";
 import Section from "./Section.jsx";
-
-const COLOR_NAMES = [
-  "primary",
-  "secondary",
-  "neutral",
-  "error",
-  "warning",
-  "info",
-  "success",
-];
 
 const SHADES = ["light", "main", "dark"];
 
@@ -23,7 +14,7 @@ export default function ColorPalette() {
       description="Each color is generated from its main value: light, dark and contrastText are computed by MUI."
     >
       <Grid container spacing={2}>
-        {COLOR_NAMES.map((name) => {
+        {THEME_COLORS.map((name) => {
           const color = theme.palette[name];
 
           return (

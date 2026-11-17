@@ -3,6 +3,7 @@ import ColorPalette from "../components/design-system/ColorPalette.jsx";
 import TypographyScale from "../components/design-system/TypographyScale.jsx";
 import ShapeAndElevation from "../components/design-system/ShapeAndElevation.jsx";
 import ComponentSamples from "../components/design-system/ComponentSamples.jsx";
+import ButtonShowcase from "../components/design-system/ButtonShowcase.jsx";
 
 export default function DesignSystem() {
   return (
@@ -17,7 +18,7 @@ export default function DesignSystem() {
 
       <ColorPalette />
       <TypographyScale />
-      {/* TODO: <ButtonShowcase /> */}
+      <ButtonShowcase />
       <ShapeAndElevation />
       <ComponentSamples />
     </Stack>

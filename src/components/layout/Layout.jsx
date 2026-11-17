@@ -20,6 +20,7 @@ export default function Layout() {
               component={NavLink}
               to={link.to}
               end
+              color="inherit"
               sx={{ "&.active": { textDecoration: "underline" } }}
             >
               {link.label}
