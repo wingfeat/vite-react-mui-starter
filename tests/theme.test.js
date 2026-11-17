@@ -17,3 +17,18 @@ describe("theme palette", () => {
     expect(neutral.contrastText).toBeDefined();
   });
 });
+
+describe("theme typography", () => {
+  it("keeps button labels in their original case", () => {
+    expect(theme.typography.button.textTransform).toBe("none");
+  });
+
+  it("uses fluid sizes that still grow with zoom for the big headings", () => {
+    ["h1", "h2", "h3", "h4"].forEach((variant) => {
+      const { fontSize } = theme.typography[variant];
+
+      expect(fontSize).toMatch(/^clamp\(/);
+      expect(fontSize).toMatch(/rem \+ [\d.]+vw/);
+    });
+  });
+});
