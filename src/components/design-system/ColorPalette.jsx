@@ -15,7 +15,8 @@ export default function ColorPalette() {
     >
       <Grid container spacing={2}>
         {THEME_COLORS.map((name) => {
-          const color = theme.palette[name];
+          // theme.vars: CSS variables, so the swatches follow the current mode.
+          const color = theme.vars.palette[name];
 
           return (
             <Grid key={name} size={{ xs: 12, sm: 6, md: 4 }}>
@@ -38,9 +39,6 @@ export default function ColorPalette() {
                 </Stack>
                 <Box sx={{ p: 1.5 }}>
                   <Typography variant="subtitle2">{name}</Typography>
-                  <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                    {color.main}
-                  </Typography>
                 </Box>
               </Paper>
             </Grid>

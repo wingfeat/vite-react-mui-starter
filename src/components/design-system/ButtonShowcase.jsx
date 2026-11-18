@@ -2,7 +2,7 @@ import { Button, Divider, Stack, Typography } from "@mui/material";
 import { THEME_COLORS } from "../../theme/palette.js";
 import Section from "./Section.jsx";
 
-const VARIANTS = ["contained", "outlined", "text", "soft"];
+const VARIANTS = ["contained", "outlined", "soft", "text"];
 
 export default function ButtonShowcase() {
   return (

@@ -1,7 +1,7 @@
-import { alpha } from "@mui/material/styles";
 import { THEME_COLORS } from "./palette.js";
 
 const components = {
+  // Styles read theme.vars (CSS variables) so they follow the light/dark mode.
   // Global styles, added by <CssBaseline />.
   MuiCssBaseline: {
     styleOverrides: {
@@ -26,19 +26,22 @@ const components = {
       root: ({ theme }) => ({
         // Visible keyboard focus (accessibility).
         "&.Mui-focusVisible": {
-          outline: `2px solid ${theme.palette.primary.main}`,
+          outline: `2px solid ${theme.vars.palette.primary.main}`,
           outlineOffset: 2,
         },
         // Custom variant: <Button variant="soft" color="...">
-        // A light tinted background with dark text, one rule per color.
+        // A tinted background, with dark text (light mode) or light text (dark mode).
         variants: THEME_COLORS.map((color) => ({
           props: { variant: "soft", color },
           style: {
-            color: theme.palette[color].dark,
-            backgroundColor: alpha(theme.palette[color].main, 0.12),
+            color: theme.vars.palette[color].dark,
+            backgroundColor: theme.alpha(theme.vars.palette[color].main, 0.12),
             "&:hover": {
-              backgroundColor: alpha(theme.palette[color].main, 0.2),
+              backgroundColor: theme.alpha(theme.vars.palette[color].main, 0.2),
             },
+            ...theme.applyStyles("dark", {
+              color: theme.vars.palette[color].light,
+            }),
           },
         })),
       }),
@@ -52,8 +55,8 @@ const components = {
     },
     styleOverrides: {
       root: ({ theme }) => ({
-        backgroundColor: theme.palette.background.paper,
-        borderBottom: `1px solid ${theme.palette.divider}`,
+        backgroundColor: theme.vars.palette.background.paper,
+        borderBottom: `1px solid ${theme.vars.palette.divider}`,
       }),
     },
   },

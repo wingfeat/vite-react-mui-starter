@@ -17,7 +17,8 @@ describe("Button soft variant", () => {
     );
 
     const button = screen.getByRole("button", { name: "Soft" });
-    const expected = alpha(theme.palette.neutral.main, 0.12).replace(/\s/g, "");
+    const lightNeutral = theme.colorSchemes.light.palette.neutral.main;
+    const expected = alpha(lightNeutral, 0.12).replace(/\s/g, "");
 
     expect(getComputedStyle(button).backgroundColor.replace(/\s/g, "")).toBe(
       expected,

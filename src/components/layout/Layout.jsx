@@ -1,5 +1,6 @@
 import { AppBar, Button, Container, Toolbar, Typography } from "@mui/material";
 import { NavLink, Outlet } from "react-router";
+import ThemeToggle from "../ui/ThemeToggle";
 
 const NAV_LINKS = [
   { to: "/", label: "Home" },
@@ -26,6 +27,7 @@ export default function Layout() {
               {link.label}
             </Button>
           ))}
+          <ThemeToggle />
         </Toolbar>
       </AppBar>
 
